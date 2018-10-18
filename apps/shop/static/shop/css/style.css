@@ -1,0 +1,41 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+td:hover, th:hover{
+    color:white;
+    background-color: black;
+}
+.redbtn{
+    background-color: red;
+}
+.greenbtn{
+    background-color: greenyellow;
+}
+.header{
+    widows: 100%;
+    padding: 40px 10px 40px 10px;
+    margin: 0;
+    background-color: grey;
+    text-align: center;
+}
+.price{
+    font-size: 20pt;
+    border: 2px solid red;
+    text-align: center;
+}
+.total{
+    font-size: 25pt;
+    
+}

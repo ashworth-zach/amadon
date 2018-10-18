@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="header">WELCOME TO AMADON</h1>
+    <table>
+        <th>item</th>
+        <th>price</th>
+        <th>quantity</th>
+        <th>buy</th>
+        <tr>
+            {%for item in items%}
+            <td>{{item.name}}</td>
+            <td>${{item.price}}</td>
+            <form action='/amadon/buy' method='post'>
+                {% csrf_token %}
+                <td><select name='quantity'>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select></td>
+                <td><input type='hidden' value= '{{item.id}}' name='hidden' />
+                    <button type='submit'>Buy!</button></td>
+            </form>
+        </tr>
+
+        {%endfor%}
+    </table>
+    <h1 class="header">thanks for shopping at amadon</h1>
+</body>
+
+</html>
